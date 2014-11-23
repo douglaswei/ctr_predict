@@ -12,4 +12,10 @@ public class FeatureCounter {
 
     private FeatureCounter() {
     }
+
+    public int nextFeatureId() {
+        return featureCout++;
+    }
+
+    private int featureCout = 1;
 }

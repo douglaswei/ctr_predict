@@ -13,15 +13,23 @@ public abstract class FeatureNameExtractor {
     public abstract String extractFeatureName(
             List<String> inputfields);
 
-    protected List<String> inputFiledNames;
-    protected String featurePrefix;
-
     public List<String> getInputFiledNames() {
         return inputFiledNames;
     }
 
     public void setInputFiledNames(List<String> inputFiledNames) {
         this.inputFiledNames = inputFiledNames;
+    }
+
+    protected List<String> inputFiledNames;
+    protected String featurePrefix;
+
+    public String getFeaturePrefix() {
+        return featurePrefix;
+    }
+
+    public void setFeaturePrefix(String featurePrefix) {
+        this.featurePrefix = featurePrefix;
     }
 }
 

@@ -2,54 +2,267 @@
 <!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN" "http://www.springframework.org/dtd/spring-beans.dtd">
 
 <beans>
-    <bean id="simpleDateFormat" class="java.text.SimpleDateFormat">
-        <constructor-arg value="yyMMddHH" />
-    </bean>
-    <bean id="HOD" class="www.douglas.TimeFeatureProc">
-        <property name="sdf">
-            <ref bean="simpleDateFormat"/>
-        </property>
-        <property name="calendarField" value="11">
+    <bean id="banner_pos_feat" class="www.douglas.SimpleFeatureNameExtractor">
+        <property name="inputFiledNames">
+            <list>
+                <value>banner_pos</value>
+            </list>
         </property>
     </bean>
 
-    <bean id="DOW" class="www.douglas.TimeFeatureProc">
-        <property name="sdf">
-            <ref bean="simpleDateFormat"/>
-        </property>
-        <property name="calendarField" value="7">
-        </property>
-    </bean>
-
-    <bean id="AM_PM" class="www.douglas.TimeFeatureProc">
-        <property name="sdf">
-            <ref bean="simpleDateFormat"/>
-        </property>
-        <property name="calendarField" value="9" />
-    </bean>
-
-    <bean id="factory" class="www.douglas.FeatureFactory">
-        <property name="idFeatureSpace" value="10000019" />
-        <property name="adFeatureSpace" value="1106569" />
-        <property name="featureProcessorMap">
-            <map>
-                <entry key="HOD">
-                    <ref bean="HOD" />
-                </entry>
-                <entry key="DOW">
-                    <ref bean="DOW" />
-                </entry>
-                <entry key="AM_PM">
-                    <ref bean="AM_PM" />
-                </entry>
-            </map>
+    <bean id="site_id_feat" class="www.douglas.SimpleFeatureNameExtractor">
+        <property name="inputFiledNames">
+            <list>
+                <value>site_id</value>
+            </list>
         </property>
     </bean>
 
-    <bean id="featureExtractor" class="www.douglas.FeatureExtractor">
-        <property name="featureFactory">
-            <ref bean="factory"/>
+    <bean id="site_domain_feat" class="www.douglas.SimpleFeatureNameExtractor">
+        <property name="inputFiledNames">
+            <list>
+                <value>site_domain</value>
+            </list>
         </property>
     </bean>
+
+    <bean id="site_category_feat" class="www.douglas.SimpleFeatureNameExtractor">
+        <property name="inputFiledNames">
+            <list>
+                <value>site_category</value>
+            </list>
+        </property>
+    </bean>
+
+    <bean id="app_id_feat" class="www.douglas.SimpleFeatureNameExtractor">
+        <property name="inputFiledNames">
+            <list>
+                <value>app_id</value>
+            </list>
+        </property>
+    </bean>
+
+    <bean id="app_domain_feat" class="www.douglas.SimpleFeatureNameExtractor">
+        <property name="inputFiledNames">
+            <list>
+                <value>app_domain</value>
+            </list>
+        </property>
+    </bean>
+
+    <bean id="app_category_feat" class="www.douglas.SimpleFeatureNameExtractor">
+        <property name="inputFiledNames">
+            <list>
+                <value>app_category</value>
+            </list>
+        </property>
+    </bean>
+
+    <bean id="device_id_feat" class="www.douglas.SimpleFeatureNameExtractor">
+        <property name="inputFiledNames">
+            <list>
+                <value>device_id</value>
+            </list>
+        </property>
+    </bean>
+
+    <bean id="device_ip_feat" class="www.douglas.SimpleFeatureNameExtractor">
+        <property name="inputFiledNames">
+            <list>
+                <value>device_ip</value>
+            </list>
+        </property>
+    </bean>
+
+    <bean id="device_os_feat" class="www.douglas.SimpleFeatureNameExtractor">
+        <property name="inputFiledNames">
+            <list>
+                <value>device_os</value>
+            </list>
+        </property>
+    </bean>
+
+    <bean id="device_make_feat" class="www.douglas.SimpleFeatureNameExtractor">
+        <property name="inputFiledNames">
+            <list>
+                <value>device_make</value>
+            </list>
+        </property>
+    </bean>
+
+    <bean id="device_model_feat" class="www.douglas.SimpleFeatureNameExtractor">
+        <property name="inputFiledNames">
+            <list>
+                <value>device_model</value>
+            </list>
+        </property>
+    </bean>
+
+    <bean id="device_type_feat" class="www.douglas.SimpleFeatureNameExtractor">
+        <property name="inputFiledNames">
+            <list>
+                <value>device_type</value>
+            </list>
+        </property>
+    </bean>
+
+    <bean id="device_conn_type_feat" class="www.douglas.SimpleFeatureNameExtractor">
+        <property name="inputFiledNames">
+            <list>
+                <value>device_conn_type</value>
+            </list>
+        </property>
+    </bean>
+
+    <bean id="device_geo_country_feat" class="www.douglas.SimpleFeatureNameExtractor">
+        <property name="inputFiledNames">
+            <list>
+                <value>device_geo_country</value>
+            </list>
+        </property>
+    </bean>
+
+    <bean id="C1_feat" class="www.douglas.SimpleFeatureNameExtractor">
+        <property name="inputFiledNames">
+            <list>
+                <value>C1</value>
+            </list>
+        </property>
+    </bean>
+
+    <bean id="C14_feat" class="www.douglas.SimpleFeatureNameExtractor">
+        <property name="inputFiledNames">
+            <list>
+                <value>C14</value>
+            </list>
+        </property>
+    </bean>
+
+    <bean id="C15_feat" class="www.douglas.SimpleFeatureNameExtractor">
+        <property name="inputFiledNames">
+            <list>
+                <value>C15</value>
+            </list>
+        </property>
+    </bean>
+
+    <bean id="C16_feat" class="www.douglas.SimpleFeatureNameExtractor">
+        <property name="inputFiledNames">
+            <list>
+                <value>C16</value>
+            </list>
+        </property>
+    </bean>
+
+    <bean id="C17_feat" class="www.douglas.SimpleFeatureNameExtractor">
+        <property name="inputFiledNames">
+            <list>
+                <value>C17</value>
+            </list>
+        </property>
+    </bean>
+
+    <bean id="C18_feat" class="www.douglas.SimpleFeatureNameExtractor">
+        <property name="inputFiledNames">
+            <list>
+                <value>C18</value>
+            </list>
+        </property>
+    </bean>
+
+    <bean id="C19_feat" class="www.douglas.SimpleFeatureNameExtractor">
+        <property name="inputFiledNames">
+            <list>
+                <value>C19</value>
+            </list>
+        </property>
+    </bean>
+
+    <bean id="C20_feat" class="www.douglas.SimpleFeatureNameExtractor">
+        <property name="inputFiledNames">
+            <list>
+                <value>C20</value>
+            </list>
+        </property>
+    </bean>
+
+    <bean id="C21_feat" class="www.douglas.SimpleFeatureNameExtractor">
+        <property name="inputFiledNames">
+            <list>
+                <value>C21</value>
+            </list>
+        </property>
+    </bean>
+
+    <bean id="C22_feat" class="www.douglas.SimpleFeatureNameExtractor">
+        <property name="inputFiledNames">
+            <list>
+                <value>C22</value>
+            </list>
+        </property>
+    </bean>
+
+    <bean id="C23_feat" class="www.douglas.SimpleFeatureNameExtractor">
+        <property name="inputFiledNames">
+            <list>
+                <value>C23</value>
+            </list>
+        </property>
+    </bean>
+
+    <bean id="C24_feat" class="www.douglas.SimpleFeatureNameExtractor">
+        <property name="inputFiledNames">
+            <list>
+                <value>C24</value>
+            </list>
+        </property>
+    </bean>
+
+    <bean id="hour_of_day" class="www.douglas.SpecifiedFieldExtractor">
+        <property name="inputFiledNames">
+            <list>
+                <value>hour</value>
+            </list>
+        </property>
+        <property name="valueFromIdx" value="6" />
+        <property name="valueLen" value="2" />
+        <property name="featurePrefix" value="HOD_"/>
+    </bean>
+
+    <bean id="featureNameFactory" class="www.douglas.FeatureNameFactory">
+        <property name="featureNameExtractors">
+            <list>
+                <ref bean="banner_pos_feat" />
+                <ref bean="site_id_feat" />
+                <ref bean="site_domain_feat" />
+                <ref bean="site_category_feat" />
+                <ref bean="app_id_feat" />
+                <ref bean="app_domain_feat" />
+                <ref bean="app_category_feat" />
+                <ref bean="device_id_feat" />
+                <ref bean="device_ip_feat" />
+                <ref bean="device_model_feat" />
+                <ref bean="device_type_feat" />
+                <ref bean="device_conn_type_feat" />
+                <ref bean="C1_feat" />
+                <ref bean="C14_feat" />
+                <ref bean="C15_feat" />
+                <ref bean="C16_feat" />
+                <ref bean="C17_feat" />
+                <ref bean="C18_feat" />
+                <ref bean="C19_feat" />
+                <ref bean="C20_feat" />
+                <ref bean="C21_feat" />
+                <ref bean="hour_of_day" />
+            </list>
+        </property>
+    </bean>
+
+
+    <!--bean id="featureExtractor" class="www.douglas.FeatureExtractor">
+        <property name="featureNameFactory">
+            <ref bean="featureNameFactory"/>
+        </property>
+    </bean-->
 
 </beans>
