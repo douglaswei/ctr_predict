@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN" "http://www.springframework.org/dtd/spring-beans.dtd">
+
+<beans>
+    <bean id="simpleDateFormat" class="java.text.SimpleDateFormat">
+        <constructor-arg value="yyMMddHH" />
+    </bean>
+    <bean id="HOD" class="www.douglas.TimeFeatureProc">
+        <property name="sdf">
+            <ref bean="simpleDateFormat"/>
+        </property>
+        <property name="calendarField" value="11">
+        </property>
+    </bean>
+
+    <bean id="DOW" class="www.douglas.TimeFeatureProc">
+        <property name="sdf">
+            <ref bean="simpleDateFormat"/>
+        </property>
+        <property name="calendarField" value="7">
+        </property>
+    </bean>
+
+    <bean id="AM_PM" class="www.douglas.TimeFeatureProc">
+        <property name="sdf">
+            <ref bean="simpleDateFormat"/>
+        </property>
+        <property name="calendarField" value="9" />
+    </bean>
+
+    <bean id="factory" class="www.douglas.FeatureFactory">
+        <property name="idFeatureSpace" value="10000019" />
+        <property name="adFeatureSpace" value="1106569" />
+        <property name="featureProcessorMap">
+            <map>
+                <entry key="HOD">
+                    <ref bean="HOD" />
+                </entry>
+                <entry key="DOW">
+                    <ref bean="DOW" />
+                </entry>
+                <entry key="AM_PM">
+                    <ref bean="AM_PM" />
+                </entry>
+            </map>
+        </property>
+    </bean>
+
+    <bean id="featureExtractor" class="www.douglas.FeatureExtractor">
+        <property name="featureFactory">
+            <ref bean="factory"/>
+        </property>
+    </bean>
+
+</beans>
