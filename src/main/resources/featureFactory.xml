@@ -229,6 +229,39 @@
         <property name="featurePrefix" value="HOD_"/>
     </bean>
 
+    <bean id="ip_field1" class="www.douglas.SpecifiedFieldExtractor">
+        <property name="inputFiledNames">
+            <list>
+                <value>device_ip</value>
+            </list>
+        </property>
+        <property name="valueFromIdx" value="0" />
+        <property name="valueLen" value="6" />
+        <property name="featurePrefix" value="IP1_"/>
+    </bean>
+
+    <bean id="ip_field2" class="www.douglas.SpecifiedFieldExtractor">
+        <property name="inputFiledNames">
+            <list>
+                <value>device_ip</value>
+            </list>
+        </property>
+        <property name="valueFromIdx" value="0" />
+        <property name="valueLen" value="4" />
+        <property name="featurePrefix" value="IP2_"/>
+    </bean>
+
+    <bean id="ip_field3" class="www.douglas.SpecifiedFieldExtractor">
+        <property name="inputFiledNames">
+            <list>
+                <value>device_ip</value>
+            </list>
+        </property>
+        <property name="valueFromIdx" value="0" />
+        <property name="valueLen" value="2" />
+        <property name="featurePrefix" value="IP3_"/>
+    </bean>
+
     <bean id="featureNameFactory" class="www.douglas.FeatureNameFactory">
         <property name="featureNameExtractors">
             <list>
@@ -254,6 +287,9 @@
                 <ref bean="C20_feat" />
                 <ref bean="C21_feat" />
                 <ref bean="hour_of_day" />
+                <ref bean="ip_field1" />
+                <ref bean="ip_field2" />
+                <ref bean="ip_field3" />
             </list>
         </property>
     </bean>
