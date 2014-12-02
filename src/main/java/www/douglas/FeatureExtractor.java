@@ -168,6 +168,9 @@ class Extractor implements Runnable {
             if (isTrainData) {
                 int labelIndex = FieldDescription.getInstance().getValue("click");
                 label = inputFields.get(labelIndex);
+                if (label.equals("0")) {
+                    label = "-1";
+                }
             }
             bufferedWriter.write(label);
 
